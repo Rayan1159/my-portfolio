@@ -1,103 +1,82 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import MatrixRain from "./components/MatrixRain";
+import Typewriter from "./components/Typewriter";
+import TerminalFrame from "./components/TerminalFrame";
+import SkillsGrid from "./components/SkillsGrid";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen w-full relative font-mono">
+      <MatrixRain />
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-16">
+        <header className="mb-8 md:mb-12">
+          <h1 className="text-2xl md:text-3xl text-[--hacker-accent] tracking-wide">
+            <Typewriter text="> Welcome to my portfolio (wip)" />
+          </h1>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <TerminalFrame title="~/portfolio $">
+          <div className="space-y-6">
+            <section>
+              <div className="text-[--hacker-dim] text-xs mb-2">about.txt</div>
+              <p className="text-sm md:text-base leading-relaxed">
+
+              </p>
+            </section>
+
+            <section>
+              <div className="text-[--hacker-dim] text-xs mb-2">links/</div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                <li><a className="a-like" href="https://github.com/Rayan1159">github →</a></li>
+                <li><a className="a-like" href="#">linkedin →</a></li>
+                <li><a className="a-like" href="#">projects →</a></li>
+                <li><a className="a-like" href="#">contact →</a></li>
+              </ul>
+            </section>
+
+            <section>
+              <div className="text-[--hacker-dim] text-xs mb-2">skills/</div>
+              <SkillsGrid />
+            </section>
+
+            <section>
+              <div className="text-[--hacker-dim] text-xs mb-2">jobs/</div>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-3 p-3 rounded border border-[--hacker-grid] bg-black/20">
+                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs bg-[--hacker-bg-dim] border border-[--hacker-grid] rounded">1</span>
+                  <span className="text-[--hacker-fg]/90">bhvk (web engineer)</span>
+                </li>
+                <li className="flex items-center gap-3 p-3 rounded border border-[--hacker-grid] bg-black/20">
+                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs bg-[--hacker-bg-dim] border border-[--hacker-grid] rounded">2</span>
+                  <span className="text-[--hacker-fg]/90">digiteam (backend and frontend dev)</span>
+                </li>
+                <li className="flex items-center gap-3 p-3 rounded border border-[--hacker-grid] bg-black/20">
+                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs bg-[--hacker-bg-dim] border border-[--hacker-grid] rounded">3</span>
+                  <span className="text-[--hacker-fg]/90">bitsenbytes (web dev)</span>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <div className="text-[--hacker-dim] text-xs mb-2">stack.json</div>
+              <div className="text-xs md:text-sm bg-black/40 border border-[--hacker-grid] rounded p-3 overflow-auto">
+                  {`{
+                      "framework": "Next.js",
+                      "language": "TypeScript",
+                      "styling": "TailwindCSS",
+                      "hosting": "Vercel",
+                 }`}
+              </div>
+            </section>
+          </div>
+        </TerminalFrame>
+
+        <footer className="mt-10 md:mt-14 text-xs text-[--hacker-dim]">
+          <span className="opacity-80">Bas Kruithof © {new Date().getFullYear()} — built with </span>
+          <a className="a-like" href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>
+        </footer>
+      </div>
     </div>
   );
 }
