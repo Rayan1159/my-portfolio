@@ -24,12 +24,16 @@ export default function MatrixRain() {
     };
     window.addEventListener("resize", handleResize);
 
+    const randomColor = () => {
+        return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    }
+
     const draw = () => {
       // translucent background to create fading trails
       ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = "#dc0202"; // neon green
+      ctx.fillStyle = randomColor() // neon green
       ctx.font = `${fontSize}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace`;
 
       for (let i = 0; i < drops.length; i++) {
