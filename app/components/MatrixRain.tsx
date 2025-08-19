@@ -1,10 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-/**
- * MatrixRain renders a fullscreen canvas with a subtle matrix/green glyph rain.
- * It is intentionally light to avoid heavy CPU usage.
- */
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);

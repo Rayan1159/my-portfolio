@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import MatrixRain from "./components/MatrixRain";
 import Typewriter from "./components/Typewriter";
